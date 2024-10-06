@@ -2113,13 +2113,10 @@ body::after {
   display: flex;
   background-color: #171719;
   padding: 0rem 1.25rem;
-  -webkit-column-gap: 1rem;
-     -moz-column-gap: 1rem;
-          column-gap: 1rem;
+  -webkit-column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
   row-gap: 2.1875rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .sale__content {
@@ -2221,6 +2218,11 @@ body::after {
 .sale__image {
   display: none;
   max-width: 68.75rem;
+}
+
+.sale__image picture,
+.sale__image img {
+  height: 100%;
 }
 
 .page__specification {
@@ -3345,7 +3347,9 @@ body::after {
 .about__slide {
   border: 0.0625rem solid #414141;
   width: 19.9375rem;
-  min-height: 18.4375rem;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
 }
 
 .about__buttons {
@@ -3753,6 +3757,10 @@ body::after {
 .swiper-horizontal {
   -ms-touch-action: pan-y;
       touch-action: pan-y;
+}
+
+.swiper-button-disabled {
+  cursor: auto;
 }
 
 .swiper-grid > .swiper-wrapper {
@@ -4353,14 +4361,11 @@ body::after {
 
   .sale__wrapper {
     padding: 0;
-    padding-left: max(1.25rem, (100% - 85.5rem) / 2);
     min-height: 31.9375rem;
-  }
-
-  .sale__wrapper {
     -webkit-column-gap: 2.1875rem;
        -moz-column-gap: 2.1875rem;
             column-gap: 2.1875rem;
+    padding-left: max(1.25rem, (100% - 85.5rem) / 2);
   }
 
   .sale__content {
@@ -4419,41 +4424,6 @@ body::after {
     display: block;
   }
 
-  .visualization__item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    max-height: 69rem;
-    height: 100%;
-  }
-
-  .visualization__item:nth-child(even) {
-    background-color: var(--black-bg);
-  }
-
-  .visualization__item-wrapper {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-
-  .visualization__slider {
-    min-width: 36.4375rem;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 55%;
-            flex: 0 0 55%;
-    max-width: 53.75rem;
-    min-height: 43.75rem;
-  }
-
-  .visualization__slide {
-    height: auto;
-  }
-
   .visualization__slide img {
     -o-object-position: bottom;
        object-position: bottom;
@@ -4464,22 +4434,8 @@ body::after {
     margin: 0;
   }
 
-  .visualization__content {
-    padding: 2.5rem 1.25rem 1.875rem 0rem;
-    max-width: 42.5625rem;
-  }
-
-  .visualization__title {
-    max-width: 35.375rem;
-  }
-
   .visualization-spollers {
     margin-bottom: 2.5rem;
-  }
-
-  .visualization-spollers__item {
-    padding-top: 1.875rem;
-    padding-bottom: 1.875rem;
   }
 
   .page__projects {
@@ -4725,6 +4681,61 @@ body::after {
 @media (min-width: 120.0625em) {
   .visualization__slider {
     min-height: 69rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .visualization__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-height: 69rem;
+    height: 100%;
+  }
+
+  .visualization__item:nth-child(even) {
+    background-color: var(--black-bg);
+  }
+
+  .visualization__item:last-child .visualization-spollers__images {
+    min-height: 7.5rem;
+  }
+
+  .visualization__item-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .visualization__slider {
+    min-width: 36.4375rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 55%;
+            flex: 0 0 55%;
+    max-width: 53.75rem;
+    min-height: 43.75rem;
+  }
+
+  .visualization__slide {
+    height: auto;
+  }
+
+  .visualization__content {
+    padding: 2.5rem 1.25rem 1.875rem 0rem;
+    max-width: 42.5625rem;
+  }
+
+  .visualization__title {
+    max-width: 35.375rem;
+  }
+
+  .visualization-spollers__item {
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
   }
 }
 
